@@ -1,0 +1,9 @@
+C:\Users\25249\source\repos\WebApplication9\Exam.dat\obj\Debug\netcoreapp2.2\Exam.dat.csproj.CoreCompileInputs.cache
+C:\Users\25249\source\repos\WebApplication9\Exam.dat\obj\Debug\netcoreapp2.2\Exam.dat.AssemblyInfoInputs.cache
+C:\Users\25249\source\repos\WebApplication9\Exam.dat\obj\Debug\netcoreapp2.2\Exam.dat.AssemblyInfo.cs
+C:\Users\25249\source\repos\WebApplication9\Exam.dat\bin\Debug\netcoreapp2.2\Exam.dat.deps.json
+C:\Users\25249\source\repos\WebApplication9\Exam.dat\bin\Debug\netcoreapp2.2\Exam.dat.dll
+C:\Users\25249\source\repos\WebApplication9\Exam.dat\bin\Debug\netcoreapp2.2\Exam.dat.pdb
+C:\Users\25249\source\repos\WebApplication9\Exam.dat\obj\Debug\netcoreapp2.2\Exam.dat.dll
+C:\Users\25249\source\repos\WebApplication9\Exam.dat\obj\Debug\netcoreapp2.2\Exam.dat.pdb
+C:\Users\25249\source\repos\WebApplication9\Exam.dat\obj\Debug\netcoreapp2.2\Exam.dat.csprojAssemblyReference.cache
