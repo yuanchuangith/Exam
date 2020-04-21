@@ -1,0 +1,12 @@
+C:\Users\25249\source\repos\WebApplication9\Models\bin\Debug\netcoreapp2.2\Models.deps.json
+C:\Users\25249\source\repos\WebApplication9\Models\bin\Debug\netcoreapp2.2\Models.runtimeconfig.json
+C:\Users\25249\source\repos\WebApplication9\Models\bin\Debug\netcoreapp2.2\Models.runtimeconfig.dev.json
+C:\Users\25249\source\repos\WebApplication9\Models\bin\Debug\netcoreapp2.2\Models.dll
+C:\Users\25249\source\repos\WebApplication9\Models\bin\Debug\netcoreapp2.2\Models.pdb
+C:\Users\25249\source\repos\WebApplication9\Models\obj\Debug\netcoreapp2.2\Models.csproj.CoreCompileInputs.cache
+C:\Users\25249\source\repos\WebApplication9\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfoInputs.cache
+C:\Users\25249\source\repos\WebApplication9\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfo.cs
+C:\Users\25249\source\repos\WebApplication9\Models\obj\Debug\netcoreapp2.2\Models.dll
+C:\Users\25249\source\repos\WebApplication9\Models\obj\Debug\netcoreapp2.2\Models.pdb
+C:\Users\25249\source\repos\WebApplication9\Models\obj\Debug\netcoreapp2.2\Models.genruntimeconfig.cache
+C:\Users\25249\source\repos\WebApplication9\Models\obj\Debug\netcoreapp2.2\Models.csprojAssemblyReference.cache
