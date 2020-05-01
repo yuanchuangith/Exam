@@ -18,6 +18,6 @@ namespace Exam.dat.DataModels
         public string Answer3 { get; set; }
         public string Answer4 { get; set; }
 
-      
+       
     }
 }

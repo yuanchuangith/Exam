@@ -17,6 +17,7 @@ namespace Exam.dat
         public string Imgurl { get; set; }
         public string  Class { get; set; }
         public string Signature { get; set; }
+       public string SystemTopic { get; set; }
         public  ICollection<IdentityUserClaim<string>> Claims { get; set; }
         public  ICollection<IdentityUserLogin<string>> Login { get; set; }
         public  ICollection<IdentityUserToken<string>> Token { get; set; }

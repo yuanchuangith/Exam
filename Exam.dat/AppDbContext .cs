@@ -18,14 +18,23 @@ namespace Exam.dat
         public virtual DbSet<Studentscore> Studentscore { get; set; }
         public virtual DbSet<Topic> Topic { get; set; }
         public virtual DbSet<TopicTypeTb> TopicTypeTb { get; set; }
-
-
+        public virtual DbSet<NewTeacherTopic>  NewTeacherTopics { get; set; }
+        public virtual DbSet<NewTopic>  NewTopics { get; set; }
+        public virtual DbSet<TopicMistakeCount> TopicMistakeCounts { get; set; }
+    
+        public virtual DbSet<TopicSystem>  TopicSystem { get; set; }
         [System.Obsolete]
         public static readonly LoggerFactory MyLoggerFactory
             = new LoggerFactory(new[] { new ConsoleLoggerProvider((_, __) => true, true) });
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
+            modelBuilder.Entity<TopicMistakeCount>(entity=>{
+                entity.ToTable("TopicMistakeCount");
+                entity.Property(e => e.ID).HasColumnName("ID");
+                entity.Property(e => e.Topicid).HasColumnName("Topicid");
+                entity.Property(e => e.Count).HasColumnName("Count");
+            });
 
             modelBuilder.Entity<DegreeTb>(entity =>
             {
@@ -39,6 +48,21 @@ namespace Exam.dat
                     .IsRequired()
                     .HasMaxLength(10);
             });
+            modelBuilder.Entity<TopicSystem>(entity =>
+            {
+                entity.Property(e => e.ID).HasColumnName("ID");
+                entity.Property(e => e.UserId)
+                 .IsRequired()
+                 .HasColumnName("UserId").HasMaxLength(450);
+                entity.Property(e => e.Class)
+               .IsRequired()
+               .HasColumnName("Class");
+                entity.Property(e => e.Significance).HasColumnName("Significance");
+                entity.Property(e => e.TopicSytemId).HasColumnName("TopicSytemId");
+
+               
+            });
+
 
             modelBuilder.Entity<Mistake>(entity =>
             {
@@ -74,6 +98,21 @@ namespace Exam.dat
 
             });
 
+            modelBuilder.Entity<NewTeacherTopic>(entity =>
+            {
+                entity.ToTable("NewTeacherTopic");
+                entity.Property(e => e.ID).HasColumnName("ID");
+                entity.Property(e => e.UserId)
+                 .IsRequired()
+                 .HasColumnName("UserId").HasMaxLength(450);
+                entity.Property(e => e.Class)
+                .IsRequired()
+                .HasColumnName("Class");
+                entity.Property(e => e.TopicSytemId)
+           .IsRequired()
+           .HasColumnName("TopicSytemId").HasMaxLength(1000); ;
+
+            });
             modelBuilder.Entity<Topic>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
@@ -131,6 +170,67 @@ namespace Exam.dat
                     .HasMaxLength(4000);
 
                
+            });
+            modelBuilder.Entity<NewTopic>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.TopicSytemId)
+                   .IsRequired()
+                   .HasColumnName("TopicSytemId")
+                   .HasMaxLength(1000);
+                entity.Property(e => e.Answer1)
+                    .IsRequired()
+                    .HasColumnName("Answer1")
+                    .HasMaxLength(1000);
+
+                entity.Property(e => e.Answer2)
+                    .IsRequired()
+                    .HasColumnName("Answer2")
+                    .HasMaxLength(1000);
+                entity.Property(e => e.Answer3)
+                    .IsRequired()
+                    .HasColumnName("Answer3")
+                    .HasMaxLength(1000);
+                entity.Property(e => e.Answer4)
+                    .IsRequired()
+                    .HasColumnName("answer4")
+                    .HasMaxLength(1000);
+
+                entity.Property(e => e.Degree)
+                    .IsRequired()
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.Kind)
+                    .IsRequired()
+                    .HasColumnName("kind")
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.OptionFour)
+                    .IsRequired()
+                    .HasColumnName("optionFOUR")
+                    .HasMaxLength(1000);
+
+                entity.Property(e => e.OptionOne)
+                    .IsRequired()
+                    .HasColumnName("optionONE")
+                    .HasMaxLength(1000);
+
+                entity.Property(e => e.OptionThree)
+                    .IsRequired()
+                    .HasColumnName("optionTHREE")
+                    .HasMaxLength(1000);
+
+                entity.Property(e => e.OptionTow)
+                    .IsRequired()
+                    .HasColumnName("optionTOW")
+                    .HasMaxLength(1000);
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasColumnName("title")
+                    .HasMaxLength(4000);
+
+
             });
 
             modelBuilder.Entity<TopicTypeTb>(entity =>

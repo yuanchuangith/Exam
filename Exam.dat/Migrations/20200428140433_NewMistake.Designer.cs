@@ -4,14 +4,16 @@ using Exam.dat;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Exam.dat.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200428140433_NewMistake")]
+    partial class NewMistake
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -412,6 +414,8 @@ namespace Exam.dat.Migrations
                         .HasColumnName("kind")
                         .HasMaxLength(100);
 
+                    b.Property<int>("MistakeNum");
+
                     b.Property<string>("OptionFour")
                         .IsRequired()
                         .HasColumnName("optionFOUR")
@@ -440,26 +444,6 @@ namespace Exam.dat.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Topic");
-                });
-
-            modelBuilder.Entity("Exam.dat.DataModels.TopicMistakeCount", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("ID")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Count")
-                        .HasColumnName("Count");
-
-                    b.Property<int>("Topicid")
-                        .HasColumnName("Topicid");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("Topicid");
-
-                    b.ToTable("TopicMistakeCount");
                 });
 
             modelBuilder.Entity("Exam.dat.DataModels.TopicSystem", b =>
@@ -587,14 +571,6 @@ namespace Exam.dat.Migrations
                     b.HasOne("Exam.dat.DataModels.AspNetUsers", "User")
                         .WithMany("Studentscore")
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("Exam.dat.DataModels.TopicMistakeCount", b =>
-                {
-                    b.HasOne("Exam.dat.DataModels.Topic", "Topics")
-                        .WithMany()
-                        .HasForeignKey("Topicid")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Exam.dat.DataModels.TopicSystem", b =>
